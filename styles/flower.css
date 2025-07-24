@@ -490,3 +490,64 @@ body {
     gap: 12px;
   }
 }
+/* Badge positioning */
+.hero-image {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  display: block;
+}
+
+/* Hide badge on small screens */
+@media (max-width: 768px) {
+  .badge {
+    display: none;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .hero-image,
+  .hero-text {
+    width: 100%;
+  }
+}
+/* Default desktop layout already set correctly */
+.deal-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Mobile layout override */
+@media (max-width: 768px) {
+  .deal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .left-deals {
+    grid-template-columns: 1fr;
+  }
+
+  .deal-card.small,
+  .deal-card.large {
+    height: auto;
+  }
+
+  .deal-text {
+    bottom: 16px;
+    left: 16px;
+  }
+}
